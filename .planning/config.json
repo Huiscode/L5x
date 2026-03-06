@@ -2,5 +2,8 @@
   "project_mode": "app",
   "test_strategy": "pragmatic",
   "commit_docs": true,
-  "research_depth": "standard"
+  "research_depth": "standard",
+  "researcher_model": "sonnet",
+  "synthesizer_model": "sonnet",
+  "roadmapper_model": "sonnet"
 }

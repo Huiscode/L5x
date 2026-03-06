@@ -17,6 +17,7 @@ class ParseResult:
     summary: ParseSummary
     nodes: list[TreeNode]
     issues: list[ValidationIssue]
+    root: ET.Element
 
 
 class L5xParseError(Exception):
@@ -87,7 +88,7 @@ def parse_l5x_bytes(file_bytes: bytes, filename: str) -> ParseResult:
         file_size_bytes=len(file_bytes),
     )
 
-    return ParseResult(summary=summary, nodes=tree_nodes, issues=issues)
+    return ParseResult(summary=summary, nodes=tree_nodes, issues=issues, root=root)
 
 
 def _extract_major_revision(software_revision: str | None) -> int | None:
