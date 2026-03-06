@@ -172,20 +172,22 @@
 ## Work Breakdown (Task Backlog)
 | ID | Task | Priority | Owner | Estimate | Status |
 |----|------|----------|-------|----------|--------|
+| T-000 | Project governance setup (initial planning/status templates) | High | TBD | 0.5d | Completed |
 | T-001 | Initialize frontend/backend project structure | High | TBD | 0.5d | Planned |
 | T-002 | Add baseline tooling (lint, format, test, run scripts) | High | TBD | 0.5d | Planned |
 | T-003 | Implement v32–v36 parser and normalized node schema | High | TBD | 1-2d | Planned |
 | T-004 | Implement validation + integrity checks | High | TBD | 0.5-1d | Planned |
 | T-005 | Build hierarchy explorer UI (upload/search/expand/details) | High | TBD | 1-2d | Planned |
-| T-006 | Implement wide-scope comment/note editing workflow | High | TBD | 1-2d | Planned |
-| T-007 | Implement diff preview + change audit trail | High | TBD | 1d | Planned |
-| T-008 | Implement safe manual `.L5X` export gate | High | TBD | 1d | Planned |
-| T-009 | Implement tag relationship extraction engine | High | TBD | 1-2d | Planned |
-| T-010 | Build interactive relationship graph UI | High | TBD | 1-2d | Planned |
-| T-011 | Build local knowledge library (index + retrieval) | High | TBD | 1-2d | Planned |
-| T-012 | Implement strict-evidence offline AI troubleshooting | High | TBD | 1-2d | Planned |
-| T-013 | Implement manual note feedback loop for knowledge updates | Medium | TBD | 0.5-1d | Planned |
-| T-014 | Add tests and finalize MVP docs | Medium | TBD | 1d | Planned |
+| T-006 | Add continuity workflow rule and enforce handoff status discipline | High | TBD | 0.5d | Done |
+| T-007 | Implement wide-scope comment/note editing workflow | High | TBD | 1-2d | Planned |
+| T-008 | Implement diff preview + change audit trail | High | TBD | 1d | Planned |
+| T-009 | Implement safe manual `.L5X` export gate | High | TBD | 1d | Planned |
+| T-010 | Implement tag relationship extraction engine | High | TBD | 1-2d | Planned |
+| T-011 | Build interactive relationship graph UI | High | TBD | 1-2d | Planned |
+| T-012 | Build local knowledge library (index + retrieval) | High | TBD | 1-2d | Planned |
+| T-013 | Implement strict-evidence offline AI troubleshooting | High | TBD | 1-2d | Planned |
+| T-014 | Implement manual note feedback loop for knowledge updates | Medium | TBD | 0.5-1d | Planned |
+| T-015 | Add tests and finalize MVP docs | Medium | TBD | 1d | Planned |
 
 ## Risks & Mitigations
 - **Risk:** L5X structure variance across projects and versions
