@@ -1,0 +1,6 @@
+{
+  "project_mode": "app",
+  "test_strategy": "pragmatic",
+  "commit_docs": true,
+  "research_depth": "standard"
+}
