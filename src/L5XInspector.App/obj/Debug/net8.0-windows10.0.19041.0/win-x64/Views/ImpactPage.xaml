@@ -11,22 +11,28 @@
                 <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="12">
                     <StackPanel Spacing="8">
                         <TextBlock Text="Impact Summary" FontWeight="SemiBold" />
-                        <TextBlock Text="Tags: {x:Bind local:AppState.Impact.Tags}" />
-                        <TextBlock Text="Stations: {x:Bind local:AppState.Impact.Stations}" />
-                        <TextBlock Text="AOIs: {x:Bind local:AppState.Impact.Aois}" />
-                        <TextBlock Text="Paths: {x:Bind local:AppState.Impact.Paths}" />
+                        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="4" ColumnSpacing="8">
+                            <TextBlock Text="Tags" />
+                            <TextBlock x:ConnectionId='17' Grid.Column="1"                                            />
+                            <TextBlock Grid.Row="1" Text="Stations" />
+                            <TextBlock x:ConnectionId='18' Grid.Row="1" Grid.Column="1"                                                />
+                            <TextBlock Grid.Row="2" Text="AOIs" />
+                            <TextBlock x:ConnectionId='19' Grid.Row="2" Grid.Column="1"                                            />
+                            <TextBlock Grid.Row="3" Text="Paths" />
+                            <TextBlock x:ConnectionId='20' Grid.Row="3" Grid.Column="1"                                             />
+                        </Grid>
                     </StackPanel>
                 </Border>
                 <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="12">
                     <StackPanel Spacing="8">
                         <TextBlock Text="Affected Items" FontWeight="SemiBold" />
-                        <ListView x:ConnectionId='5' x:Name="ImpactList"                                                                                        >
+                        <ListView x:ConnectionId='11' x:Name="ImpactList"                                                                                        >
                             <ListView.ItemTemplate>
                                 <DataTemplate                              >
-                                    <StackPanel x:ConnectionId='7' Spacing="2" Padding="4">
-                                        <TextBlock x:ConnectionId='8'                      FontWeight="SemiBold" />
-                                        <TextBlock x:ConnectionId='9'                      Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
-                                        <TextBlock x:ConnectionId='10'                        Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                    <StackPanel x:ConnectionId='13' Spacing="2" Padding="4">
+                                        <TextBlock x:ConnectionId='14'                      FontWeight="SemiBold" />
+                                        <TextBlock x:ConnectionId='15'                      Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:ConnectionId='16'                        Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                                     </StackPanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -37,12 +43,22 @@
             <Border Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="12">
                 <StackPanel Spacing="12">
                     <TextBlock Text="Downstream Paths" FontWeight="SemiBold" />
-                    <TextBlock Text="Graph of potential downstream effects" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                    <ListView x:ConnectionId='2'                                                  >
+                        <ListView.ItemTemplate>
+                            <DataTemplate                                  >
+                                <StackPanel x:ConnectionId='7' Spacing="2" Padding="4">
+                                    <TextBlock x:ConnectionId='8'                        FontWeight="SemiBold" />
+                                    <TextBlock x:ConnectionId='9'                     Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                    <TextBlock x:ConnectionId='10'                        Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                     <Border Height="1" Background="{ThemeResource DividerStrokeColorDefaultBrush}" />
                     <TextBlock Text="Selected Impact" FontWeight="SemiBold" />
-                    <TextBlock x:ConnectionId='2' x:Name="ImpactDetailName" Text="Select an item" />
-                    <TextBlock x:ConnectionId='3' x:Name="ImpactDetailMeta" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
-                    <TextBlock x:ConnectionId='4' x:Name="ImpactDetailInfo" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                    <TextBlock x:ConnectionId='3' x:Name="ImpactDetailName" Text="Select an item" />
+                    <TextBlock x:ConnectionId='4' x:Name="ImpactDetailMeta" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                    <TextBlock x:ConnectionId='5' x:Name="ImpactDetailInfo" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                 </StackPanel>
             </Border>
         </Grid>

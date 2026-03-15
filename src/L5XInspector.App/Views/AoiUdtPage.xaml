@@ -9,6 +9,12 @@
         <Border Grid.Row="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="12">
             <StackPanel Spacing="8">
                 <TextBlock Text="Definitions" FontWeight="SemiBold" />
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <Button Content="All" Click="OnFilterAll" />
+                    <Button Content="AOIs" Click="OnFilterAoi" />
+                    <Button Content="UDTs" Click="OnFilterUdt" />
+                    <Button Content="Tags" Click="OnFilterTags" />
+                </StackPanel>
                 <ListView x:Name="AoiUdtList"
                           ItemsSource="{x:Bind local:AppState.AoiUdtItems}"
                           SelectionChanged="OnSelectionChanged">
@@ -27,9 +33,11 @@
         <Border Grid.Row="1" Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="12">
             <StackPanel Spacing="8">
                 <TextBlock Text="Details" FontWeight="SemiBold" />
+                <TextBlock x:Name="DetailKind" Text="" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                 <TextBlock x:Name="DetailName" Text="Select an item" FontWeight="SemiBold" />
                 <TextBlock x:Name="DetailSummary" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                 <TextBlock x:Name="DetailMeta" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                <TextBlock x:Name="DetailCounts" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
             </StackPanel>
         </Border>
     </Grid>

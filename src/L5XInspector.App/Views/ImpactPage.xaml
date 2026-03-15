@@ -11,10 +11,16 @@
                 <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="12">
                     <StackPanel Spacing="8">
                         <TextBlock Text="Impact Summary" FontWeight="SemiBold" />
-                        <TextBlock Text="Tags: {x:Bind local:AppState.Impact.Tags}" />
-                        <TextBlock Text="Stations: {x:Bind local:AppState.Impact.Stations}" />
-                        <TextBlock Text="AOIs: {x:Bind local:AppState.Impact.Aois}" />
-                        <TextBlock Text="Paths: {x:Bind local:AppState.Impact.Paths}" />
+                        <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="4" ColumnSpacing="8">
+                            <TextBlock Text="Tags" />
+                            <TextBlock Grid.Column="1" Text="{x:Bind local:AppState.Impact.Tags}" />
+                            <TextBlock Grid.Row="1" Text="Stations" />
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="{x:Bind local:AppState.Impact.Stations}" />
+                            <TextBlock Grid.Row="2" Text="AOIs" />
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="{x:Bind local:AppState.Impact.Aois}" />
+                            <TextBlock Grid.Row="3" Text="Paths" />
+                            <TextBlock Grid.Row="3" Grid.Column="1" Text="{x:Bind local:AppState.Impact.Paths}" />
+                        </Grid>
                     </StackPanel>
                 </Border>
                 <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="12">
@@ -37,7 +43,17 @@
             <Border Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="12">
                 <StackPanel Spacing="12">
                     <TextBlock Text="Downstream Paths" FontWeight="SemiBold" />
-                    <TextBlock Text="Graph of potential downstream effects" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                    <ListView ItemsSource="{x:Bind local:AppState.ImpactFlows}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="local:ImpactFlowItem">
+                                <StackPanel Spacing="2" Padding="4">
+                                    <TextBlock Text="{x:Bind Source}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{x:Bind Tag}" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                    <TextBlock Text="{x:Bind Target}" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                     <Border Height="1" Background="{ThemeResource DividerStrokeColorDefaultBrush}" />
                     <TextBlock Text="Selected Impact" FontWeight="SemiBold" />
                     <TextBlock x:Name="ImpactDetailName" Text="Select an item" />

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("L5XInspector.Cli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d6e8bf3192a39558ae1043d8acc447d1c881ef4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+509ab6e0ebc5b19fe374f5f696cfd33997311b3f")]
 [assembly: System.Reflection.AssemblyProductAttribute("L5XInspector.Cli")]
 [assembly: System.Reflection.AssemblyTitleAttribute("L5XInspector.Cli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
