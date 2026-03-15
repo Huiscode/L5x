@@ -1,7 +1,8 @@
 <Page
     x:Class="L5XInspector.App.Views.ImpactPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:L5XInspector.App">
 
     <Grid Padding="24" RowDefinitions="Auto,*" RowSpacing="16">
         <TextBlock Text="Change Impact Lens" FontSize="24" FontWeight="SemiBold" />
@@ -10,20 +11,38 @@
                 <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="12">
                     <StackPanel Spacing="8">
                         <TextBlock Text="Impact Summary" FontWeight="SemiBold" />
-                        <TextBlock Text="Tags, stations, AOIs affected" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                        <TextBlock Text="Tags: {x:Bind local:AppState.Impact.Tags}" />
+                        <TextBlock Text="Stations: {x:Bind local:AppState.Impact.Stations}" />
+                        <TextBlock Text="AOIs: {x:Bind local:AppState.Impact.Aois}" />
+                        <TextBlock Text="Paths: {x:Bind local:AppState.Impact.Paths}" />
                     </StackPanel>
                 </Border>
                 <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="12">
                     <StackPanel Spacing="8">
-                        <TextBlock Text="Metrics" FontWeight="SemiBold" />
-                        <TextBlock Text="Depth, breadth, and affected stations" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                        <TextBlock Text="Affected Items" FontWeight="SemiBold" />
+                        <ListView x:Name="ImpactList" ItemsSource="{x:Bind local:AppState.ImpactItems}" SelectionChanged="OnSelectionChanged">
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="local:ImpactItem">
+                                    <StackPanel Spacing="2" Padding="4">
+                                        <TextBlock Text="{x:Bind Name}" FontWeight="SemiBold" />
+                                        <TextBlock Text="{x:Bind Meta}" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock Text="{x:Bind Detail}" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackPanel>
                 </Border>
             </StackPanel>
             <Border Grid.Column="1" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8" Padding="12">
-                <StackPanel Spacing="8">
+                <StackPanel Spacing="12">
                     <TextBlock Text="Downstream Paths" FontWeight="SemiBold" />
                     <TextBlock Text="Graph of potential downstream effects" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                    <Border Height="1" Background="{ThemeResource DividerStrokeColorDefaultBrush}" />
+                    <TextBlock Text="Selected Impact" FontWeight="SemiBold" />
+                    <TextBlock x:Name="ImpactDetailName" Text="Select an item" />
+                    <TextBlock x:Name="ImpactDetailMeta" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                    <TextBlock x:Name="ImpactDetailInfo" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                 </StackPanel>
             </Border>
         </Grid>

@@ -1,3 +1,4 @@
+using L5XInspector.Core;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
@@ -82,6 +83,9 @@ public sealed partial class MainWindow : Window
             return;
 
         AppState.L5xFileName = file.Name;
+
+        var project = L5xStreamingParser.ParseProject(file.Path);
+        AppState.LoadProject(project);
 
         UpdateHeaderFileName();
 

@@ -11,11 +11,11 @@
 - Station rules test: BelongsToStation edges=0 (patterns did not match sample naming).
 
 ## Current Focus
-- Milestone 4 complete; ready to begin AOI/UDT docs and Impact views (M5).
+- Milestone 5: AOI/UDT docs + Impact Lens (data wiring).
 
 ## Next Steps
-- Start M5: wire AOI/UDT explorer to parsed models.
-- Start Impact Lens data scaffolding.
+- Wire real parsed AOI/UDT data into the UI.
+- Compute impact summary from parsed tags and graph.
 
 ## Fix Notes (Programs/Routines were zero)
 - Root cause: parsing within `<Controller>` was skipping `<Programs>` when using `ReadSubtree` + `Skip`.

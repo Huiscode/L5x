@@ -29,6 +29,7 @@
 - ✅ Implement Program Navigator + dependency map (shell)
 - ✅ Implement Station-Centric View with summaries (shell)
 - ✅ Implement Signal Trace / I/O Explorer (shell)
+- ✅ M4 UI shell test completed
 
 ### Milestone 5: AOI/UDT docs + Impact Lens
 - Implement AOI/UDT Explainer and usage lists

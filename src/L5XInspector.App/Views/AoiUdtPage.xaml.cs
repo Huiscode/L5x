@@ -8,4 +8,14 @@ public sealed partial class AoiUdtPage : Page
     {
         InitializeComponent();
     }
+
+    private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (AoiUdtList.SelectedItem is not AoiUdtItem item)
+            return;
+
+        DetailName.Text = item.Name;
+        DetailSummary.Text = item.Summary;
+        DetailMeta.Text = item.Meta;
+    }
 }
